@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>About Me!</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <p>Do I have any pets?</p>
+    <p>Have I ever traveled abroad?</p>
+    <script>
+        "use strict";
+        alert('Let\'s play a guessing game!');
+
+        // pet question
+        var pets = prompt('Do I have any pets?');
+        if(pets.toUpperCase()==='YES'||pets.toUpperCase()==='Y'){
+            alert('That\'s right! I have a cat.');
+            console.log('pets answered correctly.');
+        }else if(pets.toUpperCase()==='NO'||pets.toUpperCase()==='N'){
+            alert('Sorry, wrong answer!');
+            console.log('pets answered incorrectly.');
+        }else{
+            alert('These are yes or no questions, answer yes or no!');
+            console.log('pets not answered.');
+        }
+
+
+        // travel question
+        var travel = prompt('Have I ever traveled abroad?');
+        if(travel.toUpperCase()==='YES'||travel.toUpperCase()==='Y'){
+            alert('I have traveled to Mexico, Canada, and China.');
+            console.log('travel answered correctly.');
+        }else if(travel.toUpperCase()==='NO'||travel.toUpperCase()==='N'){
+            alert('Sorry, wrong answer!');
+            console.log('travel answered incorrectly');
+        }else{
+            alert('These are yes or no questions, answer yes or no!');
+            console.log('travel not aswered.');
+        }
+
+        </script>
+</body>
