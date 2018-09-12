@@ -10,6 +10,7 @@
 <body>
     <p>Do I have any pets?</p>
     <p>Have I ever traveled abroad?</p>
+    <p>Do I have any siblings?</p>
     <script>
         "use strict";
         alert('Let\'s play a guessing game!');
@@ -40,6 +41,21 @@
             alert('These are yes or no questions, answer yes or no!');
             console.log('travel not aswered.');
         }
+
+
+        // siblings question
+        var siblings = prompt('Do I have any siblings?');
+        if(siblings.toUpperCase()==='YES'||siblings.toUpperCase()==='Y'){
+            alert('Sorry, wrong answer!');
+            console.log('siblings answered incorrectly.');
+        }else if(siblings.toUpperCase()==='NO'||siblings.toUpperCase()==='N'){
+            alert('Correct! I am an only child.');
+            console.log('siblings answered correctly');
+        }else{
+            alert('These are yes or no questions, answer yes or no!');
+            console.log('siblings not aswered.');
+        }
+
 
         </script>
 </body>
