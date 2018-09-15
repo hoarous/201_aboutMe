@@ -1,5 +1,25 @@
 "use strict";
-alert('Let\'s play a guessing game!');
+
+//helper functions
+var randomNumber= function(lower, higher){
+    var min = Math.ceil(higher);
+    var max = Math.floor(lower);
+    var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    return randomNumber;
+}
+
+var username = function(){
+    var username;
+    do{
+        username = prompt('What is your name?');
+    }while(!username)
+
+    return username;
+}
+
+name = username();
+
+alert('Hello ' + name + ', let\'s play a guessing game!');
 
 //FIVE YES/NO QUESTIONS
 
@@ -46,32 +66,31 @@ for(var i = 0; i < questions.length; i++){
 
 
 // RANDOM NUMBER QUESTION
-var min = Math.ceil(1);
-var max = Math.floor(10);
-var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-console.log(randomNumber);
 
 var guessCounter = 4;
 var guessedNumber;
+var randomNum = randomNumber(1,10);
 
 do{
     guessedNumber = prompt('I\'m thinking of a number 1 - 10. Guess what number I\'m thinking of.');
     guessedNumber = parseInt(guessedNumber);
-    console.log(guessedNumber, randomNumber, guessedNumber !== randomNumber);
+    console.log(guessedNumber, randomNum, guessedNumber !== randomNum);
     guessCounter--;
 
-    if(guessedNumber > randomNumber){
+    if(guessedNumber > randomNum){
         alert('Too high! You have ' + guessCounter + ' more guesses.');
-    }else if (guessedNumber < randomNumber){
+    }else if (guessedNumber < randomNum){
         alert('Too low! You have ' + guessCounter + ' more guesses.');
-    }else{
+    }else if (guessedNumber === randomNum){
         alert('good job, you got it!');
         correct++;
+    }else{
+        alert('Come on, guess a number 1-10! you have ' + ' more guesses.');
     }
-}while (guessedNumber !== randomNumber && guessCounter > 0);
+}while (guessedNumber !== randomNum && guessCounter > 0);
 
 if(guessCounter === 0){
-    alert('you didn\'t get the correct number, it was ' + randomNumber);
+    alert('You didn\'t get the correct number, it was ' + randomNum + '.');
 }
 
 
