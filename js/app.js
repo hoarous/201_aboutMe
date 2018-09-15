@@ -23,7 +23,7 @@ var responses = new Array(5);
 var correct = 0;
 
 for(var i = 0; i < questions.length; i++){
-    responses[i] = prompt(questions[i])
+    responses[i] = prompt(questions[i]);
     responses[i] = responses[i].toUpperCase();
     console.log(questions[i] + ' answered: ' + responses[i]);
     
@@ -33,7 +33,7 @@ for(var i = 0; i < questions.length; i++){
         console.log(questions[i] + ' answered ' + responses[i]);
     }
     
-    if(responses[i] === answerKey[i] || responses[i] === answerKey[i].substring(0,0)){
+    if(responses[i] === answerKey[i] || responses[i] === answerKey[i].substring(0,1)){
         correct++;
         alert('That\'s correct! ' + feedback[i]);
     }else{
@@ -43,48 +43,6 @@ for(var i = 0; i < questions.length; i++){
     console.log(correct + ' questions answered correctly.');
 }
 
-
-/*
-// pet question
-var pets = prompt('Do I have any pets?');
-if(pets.toUpperCase()==='YES'||pets.toUpperCase()==='Y'){
-    alert('That\'s right! I have a cat.');
-    console.log('pets answered correctly.');
-}else if(pets.toUpperCase()==='NO'||pets.toUpperCase()==='N'){
-    alert('Sorry, wrong answer!');
-    console.log('pets answered incorrectly.');
-}else{
-    alert('These are yes or no questions, answer yes or no!');
-    console.log('pets not answered.');
-}
-
-
-// travel question
-var travel = prompt('Have I ever traveled abroad?');
-if(travel.toUpperCase()==='YES'||travel.toUpperCase()==='Y'){
-    alert('I have traveled to Mexico, Canada, and China.');
-    console.log('travel answered correctly.');
-}else if(travel.toUpperCase()==='NO'||travel.toUpperCase()==='N'){
-    alert('Sorry, wrong answer!');
-    console.log('travel answered incorrectly');
-}else{
-    alert('These are yes or no questions, answer yes or no!');
-    console.log('travel not aswered.');
-}
-
-
-// siblings question
-var siblings = prompt('Do I have any siblings?');
-if(siblings.toUpperCase()==='YES'||siblings.toUpperCase()==='Y'){
-    alert('Sorry, wrong answer!');
-    console.log('siblings answered incorrectly.');
-}else if(siblings.toUpperCase()==='NO'||siblings.toUpperCase()==='N'){
-    alert('Correct! I am an only child.');
-    console.log('siblings answered correctly');
-}else{
-    alert('These are yes or no questions, answer yes or no!');
-    console.log('siblings not aswered.');
-}
 
 
 // RANDOM NUMBER QUESTION
@@ -97,19 +55,28 @@ var guessCounter = 4;
 var guessedNumber;
 
 do{
-    guessedNumber = prompt('pick a number 1 - 10');
+    guessedNumber = prompt('I\'m thinking of a number 1 - 10. Guess what number I\'m thinking of.');
     guessedNumber = parseInt(guessedNumber);
     console.log(guessedNumber, randomNumber, guessedNumber !== randomNumber);
     guessCounter--;
+
+    if(guessedNumber > randomNumber){
+        alert('Too high! You have ' + guessCounter + ' more guesses.');
+    }else if (guessedNumber < randomNumber){
+        alert('Too low! You have ' + guessCounter + ' more guesses.');
+    }else{
+        alert('good job, you got it!');
+        correct++;
+    }
 }while (guessedNumber !== randomNumber && guessCounter > 0);
 
 if(guessCounter === 0){
     alert('you didn\'t get the correct number, it was ' + randomNumber);
-}else{
-    alert('good job, you got it!');
-    correct++;
 }
+
 
 //MULTIPLE CORRECT ANSWER QUESTION
 
- */
+
+
+ alert('You answered ' + correct + ' questions correctly. Congratulations!');
