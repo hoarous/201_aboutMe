@@ -120,17 +120,17 @@ var guessStates = function(){
     guessCounter--;
 
     //loop for additional guesses
-    do{
+    while(!states.includes(guess) && guessCounter > 0){
         guess = prompt('Nope! You have ' + guessCounter + ' more guesses.');
         guess = guess.toUpperCase();
         console.log('States: ' + guess + ' remaining: ' + guessCounter);
         guessCounter--;
-    }while(!states.includes(guess) && guessCounter > 0);
+    };
 
     //final feedback on state guessing
     if (states.includes(guess)){
         correct++;
-        alert('that\'s right, I have lived in Washington, California, North Carolina, and Pennsylvania.');
+        alert('That\'s right! I have lived in Washington, California, North Carolina, and Pennsylvania.');
     }else{
         alert('Sorry! I\'ve lived in Washington, California, Pennsylvania, and North Carolina.');
     }
