@@ -4,9 +4,9 @@
 var totalCorrect = 0;
 
 //helper function
-var randomNumber = function(lower, higher){
-    var min = Math.ceil(higher);
-    var max = Math.floor(lower);
+var randomNumber = function(min, max){
+    min = Math.ceil(min);
+    max = Math.floor(max);
     var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
     return randomNumber;
 }
@@ -83,7 +83,7 @@ var guessRandom = function(){
     do{
         guessedNumber = prompt('I\'m thinking of a number 1 - 10. Guess what number I\'m thinking of.');
         guessedNumber = parseInt(guessedNumber);
-        console.log(guessedNumber, randomNum, guessedNumber !== randomNum);
+        console.log(guessedNumber, randomNum, guessedNumber !== randomNum, guessCounter);
         guessCounter--;
 
         if(guessedNumber > randomNum){
@@ -94,11 +94,11 @@ var guessRandom = function(){
             alert('Good job, you got it!');
             correct++;
         }else{
-            alert('Come on, guess a number 1-10! you have ' + ' more guesses.');
+            alert('Come on, guess a number 1-10! you have ' + guessCounter + ' more guesses.');
         }
     }while (guessedNumber !== randomNum && guessCounter > 0);
 
-    if(guessCounter === 0){
+    if(guessedNumber !== randomNum){
         alert('You didn\'t get the correct number, it was ' + randomNum + '.');
     }
     return correct;
