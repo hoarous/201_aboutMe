@@ -95,7 +95,21 @@ if(guessCounter === 0){
 
 
 //MULTIPLE CORRECT ANSWER QUESTION
+var states = ['california','north carolina','pennsylvania'];
+var guesses;
+guessCounter = 6;
 
+do{
+    guesses = prompt('what other states do you think i\'ve lived in besides washington?');
+    guessCounter--;
+}while(!states.includes(guesses)&& guessCounter>0);
+
+if (states.includes(guesses)){
+    correct++;
+    alert('that\'s right, I have lived in washington, california, north caroliana and pennsylvania.');
+}else{
+    alert('sorry!');
+}
 
 
  alert('You answered ' + correct + ' questions correctly. Congratulations!');
