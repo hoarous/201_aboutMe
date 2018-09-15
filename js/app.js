@@ -27,16 +27,16 @@ alert('Hello ' + name + ', let\'s play a guessing game!');
 var questions = ['Do I have any pets?', 
     'Have I ever traveled abroad?', 
     'Do I have any siblings?',
-    '',
-    ''];
+    'Do I play any instruments?',
+    'Do I play any sports?'];
 //initialize feedback
 var feedback = ['I have a cat.',
     'I have been to Mexico, Canada, and China.',
     'I am an only child.',
-    '',
-    '']
+    'I play piano and flute.',
+    'I hate exercise!']
 //initialize correct answers
-var answerKey = ['YES', 'YES', 'NO','',''];
+var answerKey = ['YES', 'YES', 'NO','YES','NO'];
 //initialize responses
 var responses = new Array(5);
 //initialize number of correct responses
@@ -82,7 +82,7 @@ do{
     }else if (guessedNumber < randomNum){
         alert('Too low! You have ' + guessCounter + ' more guesses.');
     }else if (guessedNumber === randomNum){
-        alert('good job, you got it!');
+        alert('Good job, you got it!');
         correct++;
     }else{
         alert('Come on, guess a number 1-10! you have ' + ' more guesses.');
