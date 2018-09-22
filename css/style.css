@@ -3,6 +3,8 @@ body{
     margin-left: 16%;
     margin-right: 16%;
     margin-top: 8%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #333333;
 }
 
 h1{
@@ -11,6 +13,7 @@ h1{
     margin-right: auto;
     font-family: Bodoni, Century, serif;
     font-size: 40px;
+    font-family: 'Rock Salt', cursive;
 }
 
 img{
@@ -22,28 +25,47 @@ img{
     height: auto;
 }
 
-div{
-    margin-top: 20px;
+.bigbox{
     margin-bottom: 20px;
     background-color: white;
     border-radius: 8px;
     padding: 8px;
-    width: 47%;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #333333;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 .leftbox{
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 8px;
     float: left;
+    width: 47%;
 }
 
 .rightbox{
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 8px;
     float: right;
+    width: 47%;
 }
 
 ul[title]::before {
     content: attr(title);
     display: block;
     font-weight: bold;
-    padding: 4px;
+    font-family: Bodoni, Century, serif;
+}
+
+ol[title]::before {
+    content: attr(title);
+    display: block;
+    font-weight: bold;
+    font-family: Bodoni, Century, serif;
 }
